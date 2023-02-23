@@ -12,6 +12,14 @@ Makaroni core source code.
 
 PHP >= 8
 
+##  Installing
+
+via Composer:
+
+```
+composer require makaroni/core:dev-main
+```
+
 
 ## Contributing
 Send your pull requests for contributing.
