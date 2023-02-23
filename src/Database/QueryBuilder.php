@@ -2,7 +2,6 @@
 namespace Makaroni\Core\Database;
 
 use Makaroni\Core\App;
-use Makaroni\Core\Config\Config;
 use Makaroni\Core\Database\Connection;
 
 class QueryBuilder
@@ -498,7 +497,7 @@ class QueryBuilder
      */
     public static function run(): array
     {
-        $connection = Connection::getInstance()->setOptions(App::get('database'))->connect();
+        $connection = Connection::getInstance()->setOptions(App::get('config')['database'])->connect();
 
         $statement = $connection->prepare(self::getQuery());
         $statement->execute();
