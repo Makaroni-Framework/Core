@@ -22,7 +22,7 @@ class ConnectionTest extends TestCase
         $this->assertSame(['host' => 'localhost'], (new Config($config))->get('database'));
         $this->assertSame(8080, (new Config($config))->get('server.port'));
 
-        $this->assertNull((new Config())->get('database'));
+        $this->assertNull((new Config())->get('database')); //  because config array not defined
 
         $this->assertNull((new Config())->get('lang'));
     }

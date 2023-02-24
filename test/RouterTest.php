@@ -9,7 +9,7 @@ class RouterTest extends TestCase
 {
 
     /** @test */
-    public function can_get_all_or_one_request_input_test()
+    public function can_add_and_find_route_test()
     {
 
         $router = $this->createMock(Router::class);
