@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bcb5bf5e5f87eb9db0e5d8959adc6b0",
+    "content-hash": "7c29b8d26243133434e72b6c54af1e74",
     "packages": [
+        {
+            "name": "alirezasalehizadeh/quick-migration",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/alirezasalehizadeh/QuickMigration.git",
+                "reference": "d8a9fa7873c1b86044373b7526531974fae55ad0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/alirezasalehizadeh/QuickMigration/zipball/d8a9fa7873c1b86044373b7526531974fae55ad0",
+                "reference": "d8a9fa7873c1b86044373b7526531974fae55ad0",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "10.1.x-dev"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Alirezasalehizadeh\\QuickMigration\\": "src/",
+                    "Alirezasalehizadeh\\QuickMigration\\Test\\": "test/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alireza Salehizadeh",
+                    "email": "alirezasalehizadehco@gmail.com"
+                }
+            ],
+            "description": "A quick package for implement migrations in your PHP project.",
+            "support": {
+                "issues": "https://github.com/alirezasalehizadeh/QuickMigration/issues",
+                "source": "https://github.com/alirezasalehizadeh/QuickMigration/tree/main"
+            },
+            "time": "2023-03-02T11:15:52+00:00"
+        },
         {
             "name": "symfony/routing",
             "version": "v6.2.5",
@@ -1829,7 +1874,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "alirezasalehizadeh/quick-migration": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
