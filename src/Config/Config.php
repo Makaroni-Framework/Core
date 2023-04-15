@@ -5,7 +5,7 @@ namespace Makaroni\Core\Config;
 class Config
 {
 
-    public function __construct(private  ? array $config = null)
+    public function __construct(private ?array $config = null)
     {
         $this->config = $config;
     }

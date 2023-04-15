@@ -4,7 +4,7 @@ namespace Makaroni\Core\Test;
 use Makaroni\Core\Config\Config;
 use PHPUnit\Framework\TestCase;
 
-class ConnectionTest extends TestCase
+class ConfigTest extends TestCase
 {
 
     /** @test */

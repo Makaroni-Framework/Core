@@ -13,7 +13,7 @@ class QueryBuilder
      *
      * @var string
      */
-    public static string $table;
+    private static string $table;
 
 
     /**

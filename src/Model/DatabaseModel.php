@@ -2,11 +2,16 @@
 
 namespace Makaroni\Core\Model;
 
-use Makaroni\Core\Model\Traits\HasQueryBuilder;
+use Makaroni\Core\Database\QueryBuilder;
 
 class DatabaseModel
 {
-    use HasQueryBuilder;
+    protected static $table = '';
+
+    public static function query(): QueryBuilder
+    {
+        return new QueryBuilder;
+    }
 
     public static function __callStatic($name, $arguments)
     {
