@@ -2,7 +2,7 @@
 
 namespace Makaroni\Core\Model;
 
-use Makaroni\Core\Database\QueryBuilder;
+use Makaroni\Core\Database\Builder\QueryBuilder;
 
 class DatabaseModel
 {

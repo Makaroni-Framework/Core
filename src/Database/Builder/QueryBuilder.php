@@ -1,5 +1,5 @@
 <?php
-namespace Makaroni\Core\Database;
+namespace Makaroni\Core\Database\Builder;
 
 use Makaroni\Core\App;
 use Makaroni\Core\Database\Connection;
