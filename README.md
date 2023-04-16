@@ -17,7 +17,7 @@ PHP >= 8
 via Composer:
 
 ```
-composer require makaroni/core:1.0.3
+composer require makaroni/core
 ```
 
 
