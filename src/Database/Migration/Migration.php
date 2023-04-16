@@ -1,5 +1,5 @@
 <?php
-namespace Makaroni\Core\Migration;
+namespace Makaroni\Core\Database\Migration;
 
 use Alirezasalehizadeh\QuickMigration\Migration as QuickMigration;
 
