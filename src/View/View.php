@@ -11,16 +11,13 @@ class View{
 
     public function make(string $view, array|null $data = null): void
     {
-        $basePath = $this->basePath;;
-        $fileExtension = $this->fileExtension;;
-
-        if (!file_exists($basePath . $view . $fileExtension)) {
+        if (!file_exists($this->basePath . $view . $this->fileExtension)) {
             throw new \Exception("The {$view} view not found!");
         }
 
         if(! is_null($data)){
             extract($data);
         } 
-        require_once $basePath . $view . $fileExtension;
+        require_once $this->basePath . $view . $this->fileExtension;
     }
 }

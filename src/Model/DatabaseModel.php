@@ -3,6 +3,7 @@
 namespace Makaroni\Core\Model;
 
 use Makaroni\Core\Database\Builder\QueryBuilder;
+use ReflectionClass;
 
 class DatabaseModel
 {
@@ -15,8 +16,16 @@ class DatabaseModel
 
     public static function __callStatic($name, $arguments)
     {
-        return isset(static::$table)
-        ? (new static )->query()->table(static::$table)->$name(...$arguments)
-        : (new static )->query()->$name(...$arguments);
+        static::resolveTableName(static::$table);
+        return (new static)->query()->table(static::$table)->$name(...$arguments);
+    }
+
+    private static function resolveTableName($table)
+    {
+        if (empty($table)) {
+            $class = (new ReflectionClass(get_called_class()))->getShortName();
+            $table = strtolower($class) . 's';
+            static::$table = $table;
+        }
     }
 }
