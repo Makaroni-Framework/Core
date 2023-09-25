@@ -29,7 +29,7 @@ class Router
 
     public function add(string $path, array $defaults, string $name): void
     {
-        $route = new Route($path, $defaults);
+        $route = new Route($path, ['controller' => $defaults[0], 'model' => $defaults[1]]);
         static::$routes->add($name, $route);
 
     }

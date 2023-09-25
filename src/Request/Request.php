@@ -1,7 +1,9 @@
-<?php 
+<?php
+
 namespace Makaroni\Core\Request;
 
-class Request {
+class Request
+{
 
     private $request;
 
@@ -19,6 +21,4 @@ class Request {
     {
         return $this->request[$key] ?? null;
     }
-
-
 }

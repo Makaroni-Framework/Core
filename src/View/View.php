@@ -1,23 +1,22 @@
-<?php 
+<?php
+
 namespace Makaroni\Core\View;
 
-class View{
+class View
+{
 
-    function __construct(private string $basePath, private string $fileExtension)
+    public function __construct(private string $basePath, private string $fileExtension)
     {
-        $this->basePath = $basePath;
-        $this->fileExtension = $fileExtension;
     }
 
-    public function make(string $view, array|null $data = null): void
+    public function make(string $view, array $data = []): void
     {
         if (!file_exists($this->basePath . $view . $this->fileExtension)) {
             throw new \Exception("The {$view} view not found!");
         }
 
-        if(! is_null($data)){
-            extract($data);
-        } 
+        extract($data);
+
         require_once $this->basePath . $view . $this->fileExtension;
     }
 }

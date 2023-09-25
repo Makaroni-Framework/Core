@@ -1,4 +1,5 @@
 <?php
+
 namespace Makaroni\Core\Test;
 
 use Makaroni\Core\Config\Config;
@@ -10,7 +11,7 @@ class ConfigTest extends TestCase
     /** @test */
     public function can_get_config_test()
     {
-        $config = [
+        $options = [
             'database' => [
                 'host' => 'localhost',
             ],
@@ -19,11 +20,12 @@ class ConfigTest extends TestCase
             ],
         ];
 
-        $this->assertSame(['host' => 'localhost'], (new Config($config))->get('database'));
-        $this->assertSame(8080, (new Config($config))->get('server.port'));
+        $config = new Config($options);
 
-        $this->assertNull((new Config())->get('database')); //  because config array not defined
+        $this->assertSame(['host' => 'localhost'], $config->get('database'));
+        $this->assertSame(8080, $config->get('server.port'));
 
-        $this->assertNull((new Config())->get('lang'));
+        $this->expectException(\OutOfBoundsException::class);
+        $this->assertNull($config->get('foo'));
     }
 }

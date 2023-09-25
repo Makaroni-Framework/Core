@@ -7,25 +7,30 @@ use ReflectionClass;
 
 class DatabaseModel
 {
-    protected static $table = '';
+    protected string $table = '';
 
-    public static function query(): QueryBuilder
+    public function query(): QueryBuilder
     {
         return new QueryBuilder;
     }
 
     public static function __callStatic($name, $arguments)
     {
-        static::resolveTableName(static::$table);
-        return (new static)->query()->table(static::$table)->$name(...$arguments);
+        return (new static)->__call($name, $arguments);
     }
 
-    private static function resolveTableName($table)
+    public function __call($name, $arguments)
+    {
+        $this->resolveTableName($this->table);
+        return $this->query()->table($this->table)->$name(...$arguments);
+    }
+
+    private function resolveTableName($table)
     {
         if (empty($table)) {
             $class = (new ReflectionClass(get_called_class()))->getShortName();
             $table = strtolower($class) . 's';
-            static::$table = $table;
+            $this->table = $table;
         }
     }
 }

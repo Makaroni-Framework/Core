@@ -1,4 +1,5 @@
 <?php
+
 namespace Makaroni\Core\Test;
 
 use Makaroni\Core\Request\Request;
@@ -21,5 +22,4 @@ class RequestTest extends TestCase
         $this->assertSame('foo', $request->input('title'));
         $this->assertNull($request->input('body'));
     }
-
 }

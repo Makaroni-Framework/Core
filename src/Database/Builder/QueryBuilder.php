@@ -1,8 +1,8 @@
 <?php
+
 namespace Makaroni\Core\Database\Builder;
 
 use Makaroni\Core\App;
-use Makaroni\Core\Database\Connection;
 
 class QueryBuilder
 {
@@ -464,7 +464,7 @@ class QueryBuilder
     {
         $query = " WHERE %s %s BETWEEN %s AND %s ";
         self::$betweenOrNotBetween = sprintf($query, $column, '', $firstValue, $secondValue);
-        if($notBetween){
+        if ($notBetween) {
             self::$betweenOrNotBetween = sprintf($query, $column, 'NOT', $firstValue, $secondValue);
         }
         return new QueryBuilder;
@@ -484,7 +484,7 @@ class QueryBuilder
     {
         $query = " WHERE %s %s IN (%s) ";
         self::$inOrNotIn = sprintf($query, $column, '', implode(",", $value));
-        if($notIn){
+        if ($notIn) {
             self::$inOrNotIn = sprintf($query, $column, 'NOT', implode(",", $value));
         }
         return new QueryBuilder;
@@ -497,7 +497,7 @@ class QueryBuilder
      */
     public static function run(): array
     {
-        $connection = Connection::getInstance()->setOptions(App::get('config')['database'])->connect();
+        $connection = App::getInstance()->get('connection');
 
         $statement = $connection->prepare(self::getQuery());
         $statement->execute();

@@ -1,17 +1,9 @@
 <?php
+
 namespace Makaroni\Core;
 
-class App
+use Illuminate\Container\Container;
+
+class App extends Container
 {
-    private static $registry = [];
-
-    public static function set($key, $value)
-    {
-        static::$registry[$key] = $value;
-    }
-
-    public static function get($key)
-    {
-        return static::$registry[$key];
-    }
 }

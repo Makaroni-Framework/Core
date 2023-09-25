@@ -1,8 +1,10 @@
-<?php 
+<?php
+
 namespace Makaroni\Core\Server;
 
-class Server {
-    
+class Server
+{
+
     private $server;
 
     public function __construct()
