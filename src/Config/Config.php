@@ -17,7 +17,7 @@ class Config
 
         foreach ($keys as $key) {
             if (!array_key_exists($key, $config)) {
-                throw new \OutOfBoundsException("The {$key} Key is not valid!");
+                throw new \Exception("The {$key} Key is not exists!");
             }
 
             $config = $config[$key];
