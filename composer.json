@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": "^8.0",
-        "alirezasalehizadeh/routail": "^1.0",
+        "alirezasalehizadeh/routail": "dev-main",
         "alirezasalehizadeh/quick-migration": "^1.8.0",
         "illuminate/container": "^10.24"
     },
