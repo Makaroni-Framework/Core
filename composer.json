@@ -16,8 +16,8 @@
     ],
     "require": {
         "php": "^8.0",
-        "symfony/routing": "^6.2",
-        "alirezasalehizadeh/quick-migration": "^1.7.5",
+        "alirezasalehizadeh/routail": "^1.0",
+        "alirezasalehizadeh/quick-migration": "^1.8.0",
         "illuminate/container": "^10.24"
     },
     "require-dev": {
